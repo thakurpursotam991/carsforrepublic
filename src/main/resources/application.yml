@@ -1,0 +1,40 @@
+# DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+spring:
+  datasource:
+    url:  jdbc:postgresql://localhost:5432/carsforrepublic
+    username: postgres
+    password: postgres
+  # JPA (JpaBaseConfiguration, HibernateJpaAutoConfiguration)
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+  # SQL Commands
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        default_schema: cars
+  
+  #
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 2MB
+
+
+
+car:
+  properties:
+      basepriceminvalue: 150.0
+      basepricemultiplier: 1.2
+      colourlist:
+        -METALIC
+        -CHROMATIC
+      colourincludesvalue: 500.0
+      colourexcludesvalue: 0.0
+      offroadnowheeldrive: 2
+      offroadamphibious: true
+      offroadincludesvalue: 0
+      offroadexcludesvalue: 2000
+      expression: sum(price,colourcost,offroad)

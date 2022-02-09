@@ -1,0 +1,9 @@
+CAR,BASE_PRICE,COLOUR,NO_WHEEL_DRIVE,AMPHIBIOUS,ISERRORED,ERROR,FINALPRICE
+13,200,CHROMATIC,2,TRUE,false,,740.0
+2,80,METALIC,4,TRUE,false,,2580.0
+4,150,TRUE,two,NA,true,"Amphibious should be boolean , Please check !! ",null
+4,150,TRUE,5,NA,true,"Amphibious should be boolean , Please check !! ",null
+5,200,122345443,,,true,"Amphibious should be boolean , Please check !! ",null
+7,450,TRUE,4,1,false,,3040.0
+8,100,BLACK,2,FALSE,false,,2600.0
+a,-200,122345443,,,true,"Amphibious should be boolean , Please check !! ",null
