@@ -7,7 +7,7 @@ spring:
   # JPA (JpaBaseConfiguration, HibernateJpaAutoConfiguration)
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
 
   # SQL Commands
     properties:

@@ -4,6 +4,7 @@ import com.carsforrepublic.configuration.PriceConfig;
 import com.carsforrepublic.helper.CSVHelper;
 import com.carsforrepublic.model.Car;
 import com.carsforrepublic.repository.CarsRepository;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -40,12 +41,13 @@ public class CarsForRepublicService {
 	
 	public ByteArrayInputStream load() {
 
-		List<Car> cars = repository.findAll(Sort.by(Sort.Direction.ASC, "carNumber"));
+		List<Car> cars = repository.findAll(Sort.by("carNumber"));
 		ByteArrayInputStream in = CSVHelper.carsToCSV(cars);
 		return in;
 	}
 	
 	public List<Car> getAllCars() {
-		return repository.findAll(Sort.by(Sort.Direction.ASC, "carNumber"));
+		List<Car> list= repository.findAll(Sort.by("carNumber"));
+		return list;
 	}
 }

@@ -25,19 +25,19 @@ public class Car {
 	private long id;
 
 	@Column(name = "CAR")
-	private String carNumber;
+	private Integer carNumber;
 
 	@Column(name = "BASE_PRICE")
-	private  String basePrice;
+	private  Double basePrice;
 
 	@Column(name = "COLOUR")
 	private String colour;
 	
 	@Column(name = "NO_WHEEL_DRIVE")
-	private String noWheelDrive;
+	private Integer noWheelDrive;
 	
 	@Column(name = "AMPHIBIOUS")
-	private String amphibious;
+	private boolean amphibious;
 
 	@Column(name = "IS_ERROR")
 	private boolean isErrorRecord;

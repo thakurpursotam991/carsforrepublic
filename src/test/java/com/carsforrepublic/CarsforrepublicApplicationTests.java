@@ -40,16 +40,16 @@ class CarsforrepublicApplicationTests {
 
 	@Test
 	public void getAllCarsTest(){
-		List<Car> collect = Stream.of(Car.builder().carNumber("2").amphibious("true").basePrice("150.0").
-				finalPrice(300.0).colour("METTALIC").noWheelDrive("2").isErrorRecord(false).build()).collect(Collectors.toList());
+		List<Car> collect = Stream.of(Car.builder().carNumber(2).amphibious(true).basePrice(150.0).
+				finalPrice(300.0).colour("METTALIC").noWheelDrive(2).isErrorRecord(false).build()).collect(Collectors.toList());
 		when(carsRepository.findAll(Sort.by(Sort.Direction.ASC, "carNumber"))).thenReturn(collect);
 		assertEquals(1,carsForRepublicService.getAllCars().size());
 	}
 
 	@Test
 	public void loadCarTest(){
-		List<Car> collect = Stream.of(Car.builder().carNumber("2").amphibious("true").basePrice("150.0").
-				finalPrice(300.0).colour("METTALIC").noWheelDrive("2").isErrorRecord(false).build()).collect(Collectors.toList());
+		List<Car> collect = Stream.of(Car.builder().carNumber(2).amphibious(true).basePrice(150.0).
+				finalPrice(300.0).colour("METTALIC").noWheelDrive(2).isErrorRecord(false).build()).collect(Collectors.toList());
 		when(carsRepository.findAll(Sort.by(Sort.Direction.ASC, "carNumber"))).thenReturn(collect);
 		assert(carsForRepublicService.load() instanceof ByteArrayInputStream);
 	}
@@ -63,8 +63,8 @@ class CarsforrepublicApplicationTests {
 				MediaType.TEXT_PLAIN_VALUE,
 				"13,200,CHROMATIC,2,TRUE".getBytes()
 		);
-		List<Car> collect = Stream.of(Car.builder().carNumber("2").amphibious("true").basePrice("150.0").
-				finalPrice(300.0).colour("METTALIC").noWheelDrive("2").isErrorRecord(false).build()).collect(Collectors.toList());
+		List<Car> collect = Stream.of(Car.builder().carNumber(2).amphibious(true).basePrice(150.0).
+				finalPrice(300.0).colour("METTALIC").noWheelDrive(2).isErrorRecord(false).build()).collect(Collectors.toList());
 		when(carsRepository.saveAll(collect)).thenReturn(collect);
 		carsForRepublicService.save(file);
 		verify(carsRepository,times(1)).saveAll(collect);
